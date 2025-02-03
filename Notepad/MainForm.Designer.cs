@@ -77,7 +77,7 @@
             this.viewhelpHelpMenu});
             this.menubar.Location = new System.Drawing.Point(0, 0);
             this.menubar.Name = "menubar";
-            this.menubar.Size = new System.Drawing.Size(873, 28);
+            this.menubar.Size = new System.Drawing.Size(873, 30);
             this.menubar.TabIndex = 0;
             this.menubar.Text = "menuStrip1";
             // 
@@ -101,7 +101,7 @@
             // 
             this.newFileMenu.Name = "newFileMenu";
             this.newFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newFileMenu.Size = new System.Drawing.Size(190, 26);
+            this.newFileMenu.Size = new System.Drawing.Size(224, 26);
             this.newFileMenu.Text = "New";
             this.newFileMenu.Click += new System.EventHandler(this.newFileMenu_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.openFileMenu.Name = "openFileMenu";
             this.openFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openFileMenu.Size = new System.Drawing.Size(190, 26);
+            this.openFileMenu.Size = new System.Drawing.Size(224, 26);
             this.openFileMenu.Text = "Open...";
             this.openFileMenu.Click += new System.EventHandler(this.openFileMenu_Click);
             // 
@@ -117,43 +117,46 @@
             // 
             this.saveFileMenu.Name = "saveFileMenu";
             this.saveFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveFileMenu.Size = new System.Drawing.Size(190, 26);
+            this.saveFileMenu.Size = new System.Drawing.Size(224, 26);
             this.saveFileMenu.Text = "Save";
+            this.saveFileMenu.Click += new System.EventHandler(this.saveFileMenu_Click);
             // 
             // saveasFileMenu
             // 
             this.saveasFileMenu.Name = "saveasFileMenu";
-            this.saveasFileMenu.Size = new System.Drawing.Size(190, 26);
+            this.saveasFileMenu.Size = new System.Drawing.Size(224, 26);
             this.saveasFileMenu.Text = "Save As...";
+            this.saveasFileMenu.Click += new System.EventHandler(this.saveasFileMenu_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // pagesetupFileMenu
             // 
             this.pagesetupFileMenu.Name = "pagesetupFileMenu";
-            this.pagesetupFileMenu.Size = new System.Drawing.Size(190, 26);
+            this.pagesetupFileMenu.Size = new System.Drawing.Size(224, 26);
             this.pagesetupFileMenu.Text = "Page Setup...";
             // 
             // printFileMenu
             // 
             this.printFileMenu.Name = "printFileMenu";
             this.printFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printFileMenu.Size = new System.Drawing.Size(190, 26);
+            this.printFileMenu.Size = new System.Drawing.Size(224, 26);
             this.printFileMenu.Text = "Print";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
             // 
             // exitFileMenu
             // 
             this.exitFileMenu.Name = "exitFileMenu";
-            this.exitFileMenu.Size = new System.Drawing.Size(190, 26);
+            this.exitFileMenu.Size = new System.Drawing.Size(224, 26);
             this.exitFileMenu.Text = "Exit";
+            this.exitFileMenu.Click += new System.EventHandler(this.exitFileMenu_Click);
             // 
             // editMenu
             // 
@@ -173,8 +176,10 @@
             this.selectallEditMenu,
             this.timedateEditMenu});
             this.editMenu.Name = "editMenu";
-            this.editMenu.Size = new System.Drawing.Size(49, 24);
+            this.editMenu.Size = new System.Drawing.Size(49, 26);
             this.editMenu.Text = "Edit";
+            this.editMenu.Click += new System.EventHandler(this.editMenu_Click);
+            this.editMenu.MouseEnter += new System.EventHandler(this.editMenu_MouseEnter);
             // 
             // undoEditMenu
             // 
@@ -190,31 +195,38 @@
             // 
             // cutEditMenu
             // 
+            this.cutEditMenu.Enabled = false;
             this.cutEditMenu.Name = "cutEditMenu";
             this.cutEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.cutEditMenu.Size = new System.Drawing.Size(224, 26);
             this.cutEditMenu.Text = "Cut";
+            this.cutEditMenu.Click += new System.EventHandler(this.cutEditMenu_Click);
             // 
             // copyEditMenu
             // 
+            this.copyEditMenu.Enabled = false;
             this.copyEditMenu.Name = "copyEditMenu";
             this.copyEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.copyEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.copyEditMenu.Size = new System.Drawing.Size(224, 26);
             this.copyEditMenu.Text = "Copy";
+            this.copyEditMenu.Click += new System.EventHandler(this.copyEditMenu_Click);
             // 
             // pasteEditMenu
             // 
+            this.pasteEditMenu.Enabled = false;
             this.pasteEditMenu.Name = "pasteEditMenu";
             this.pasteEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.pasteEditMenu.Size = new System.Drawing.Size(224, 26);
             this.pasteEditMenu.Text = "Paste";
+            this.pasteEditMenu.Click += new System.EventHandler(this.pasteEditMenu_Click);
             // 
             // deleteEditMenu
             // 
             this.deleteEditMenu.Name = "deleteEditMenu";
             this.deleteEditMenu.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.deleteEditMenu.Size = new System.Drawing.Size(224, 26);
             this.deleteEditMenu.Text = "Delete";
+            this.deleteEditMenu.Click += new System.EventHandler(this.deleteEditMenu_Click);
             // 
             // toolStripSeparator4
             // 
@@ -258,15 +270,17 @@
             // 
             this.selectallEditMenu.Name = "selectallEditMenu";
             this.selectallEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectallEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.selectallEditMenu.Size = new System.Drawing.Size(224, 26);
             this.selectallEditMenu.Text = "Select All";
+            this.selectallEditMenu.Click += new System.EventHandler(this.selectallEditMenu_Click);
             // 
             // timedateEditMenu
             // 
             this.timedateEditMenu.Name = "timedateEditMenu";
             this.timedateEditMenu.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.timedateEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.timedateEditMenu.Size = new System.Drawing.Size(224, 26);
             this.timedateEditMenu.Text = "Time/Date";
+            this.timedateEditMenu.Click += new System.EventHandler(this.timedateEditMenu_Click);
             // 
             // formatMenu
             // 
@@ -328,10 +342,10 @@
             // 
             this.txtArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtArea.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArea.Location = new System.Drawing.Point(0, 28);
+            this.txtArea.Location = new System.Drawing.Point(0, 30);
             this.txtArea.Margin = new System.Windows.Forms.Padding(4);
             this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(873, 414);
+            this.txtArea.Size = new System.Drawing.Size(873, 412);
             this.txtArea.TabIndex = 1;
             this.txtArea.Text = "";
             this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);

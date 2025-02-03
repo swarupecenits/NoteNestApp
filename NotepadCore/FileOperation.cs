@@ -60,7 +60,15 @@ namespace NotepadCore
 
         public void SaveFile(string fileLocation, string[] lines)
         {
+            this.fileLocation = fileLocation;
+            Stream stream =File.Open(FileLocation, FileMode.OpenOrCreate, FileAccess.Write);
 
+            using (StreamWriter streamwriter = new StreamWriter(stream)) {
+                foreach (string line in lines) { 
+                    streamwriter.WriteLine(line);
+                }
+            }
+            UpdateFileStatus();
         }
 
         public string OpenFile(string fileLocation)
