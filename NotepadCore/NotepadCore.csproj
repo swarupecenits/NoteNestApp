@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="EditOperation.cs" />
     <Compile Include="FileOperation.cs" />
+    <Compile Include="Functionality\FindNextResult.cs" />
+    <Compile Include="Functionality\FindNextSearch.cs" />
     <Compile Include="Functionality\UndoRedoClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

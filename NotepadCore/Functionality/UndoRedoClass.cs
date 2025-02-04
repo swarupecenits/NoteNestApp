@@ -15,7 +15,7 @@ namespace NotepadCore.Functionality
             UndoStack = new Stack<string>();
             RedoStack = new Stack<string>();
         }
-
+                                               
         public void Clear()
         {
             UndoStack.Clear();

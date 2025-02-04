@@ -54,6 +54,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.selectallEditMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.timedateEditMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoEditMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.formatMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.wordwrapFormatMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.fontFormatMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,10 @@
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutnotepadHelpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.txtArea = new System.Windows.Forms.RichTextBox();
+            this.statusContent = new System.Windows.Forms.StatusStrip();
+            this.status = new System.Windows.Forms.ToolStripStatusLabel();
             this.menubar.SuspendLayout();
+            this.statusContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // menubar
@@ -77,7 +81,7 @@
             this.viewhelpHelpMenu});
             this.menubar.Location = new System.Drawing.Point(0, 0);
             this.menubar.Name = "menubar";
-            this.menubar.Size = new System.Drawing.Size(873, 30);
+            this.menubar.Size = new System.Drawing.Size(873, 28);
             this.menubar.TabIndex = 0;
             this.menubar.Text = "menuStrip1";
             // 
@@ -101,7 +105,7 @@
             // 
             this.newFileMenu.Name = "newFileMenu";
             this.newFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newFileMenu.Size = new System.Drawing.Size(224, 26);
+            this.newFileMenu.Size = new System.Drawing.Size(190, 26);
             this.newFileMenu.Text = "New";
             this.newFileMenu.Click += new System.EventHandler(this.newFileMenu_Click);
             // 
@@ -109,7 +113,7 @@
             // 
             this.openFileMenu.Name = "openFileMenu";
             this.openFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openFileMenu.Size = new System.Drawing.Size(224, 26);
+            this.openFileMenu.Size = new System.Drawing.Size(190, 26);
             this.openFileMenu.Text = "Open...";
             this.openFileMenu.Click += new System.EventHandler(this.openFileMenu_Click);
             // 
@@ -117,44 +121,44 @@
             // 
             this.saveFileMenu.Name = "saveFileMenu";
             this.saveFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveFileMenu.Size = new System.Drawing.Size(224, 26);
+            this.saveFileMenu.Size = new System.Drawing.Size(190, 26);
             this.saveFileMenu.Text = "Save";
             this.saveFileMenu.Click += new System.EventHandler(this.saveFileMenu_Click);
             // 
             // saveasFileMenu
             // 
             this.saveasFileMenu.Name = "saveasFileMenu";
-            this.saveasFileMenu.Size = new System.Drawing.Size(224, 26);
+            this.saveasFileMenu.Size = new System.Drawing.Size(190, 26);
             this.saveasFileMenu.Text = "Save As...";
             this.saveasFileMenu.Click += new System.EventHandler(this.saveasFileMenu_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
             // 
             // pagesetupFileMenu
             // 
             this.pagesetupFileMenu.Name = "pagesetupFileMenu";
-            this.pagesetupFileMenu.Size = new System.Drawing.Size(224, 26);
+            this.pagesetupFileMenu.Size = new System.Drawing.Size(190, 26);
             this.pagesetupFileMenu.Text = "Page Setup...";
             // 
             // printFileMenu
             // 
             this.printFileMenu.Name = "printFileMenu";
             this.printFileMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printFileMenu.Size = new System.Drawing.Size(224, 26);
+            this.printFileMenu.Size = new System.Drawing.Size(190, 26);
             this.printFileMenu.Text = "Print";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(187, 6);
             // 
             // exitFileMenu
             // 
             this.exitFileMenu.Name = "exitFileMenu";
-            this.exitFileMenu.Size = new System.Drawing.Size(224, 26);
+            this.exitFileMenu.Size = new System.Drawing.Size(190, 26);
             this.exitFileMenu.Text = "Exit";
             this.exitFileMenu.Click += new System.EventHandler(this.exitFileMenu_Click);
             // 
@@ -174,24 +178,27 @@
             this.gotoEditMenu,
             this.toolStripSeparator5,
             this.selectallEditMenu,
-            this.timedateEditMenu});
+            this.timedateEditMenu,
+            this.redoEditMenu});
             this.editMenu.Name = "editMenu";
-            this.editMenu.Size = new System.Drawing.Size(49, 26);
+            this.editMenu.Size = new System.Drawing.Size(49, 24);
             this.editMenu.Text = "Edit";
             this.editMenu.Click += new System.EventHandler(this.editMenu_Click);
             this.editMenu.MouseEnter += new System.EventHandler(this.editMenu_MouseEnter);
             // 
             // undoEditMenu
             // 
+            this.undoEditMenu.Enabled = false;
             this.undoEditMenu.Name = "undoEditMenu";
             this.undoEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.undoEditMenu.Size = new System.Drawing.Size(224, 26);
             this.undoEditMenu.Text = "Undo";
+            this.undoEditMenu.Click += new System.EventHandler(this.undoEditMenu_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(204, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(221, 6);
             // 
             // cutEditMenu
             // 
@@ -231,40 +238,44 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(204, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
             // 
             // findEditMenu
             // 
             this.findEditMenu.Name = "findEditMenu";
             this.findEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.findEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.findEditMenu.Size = new System.Drawing.Size(224, 26);
             this.findEditMenu.Text = "Find...";
+            this.findEditMenu.Click += new System.EventHandler(this.findEditMenu_Click);
             // 
             // findnextEditMenu
             // 
             this.findnextEditMenu.Name = "findnextEditMenu";
             this.findnextEditMenu.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.findnextEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.findnextEditMenu.Size = new System.Drawing.Size(224, 26);
             this.findnextEditMenu.Text = "Find Next";
+            this.findnextEditMenu.Click += new System.EventHandler(this.findnextEditMenu_Click);
             // 
             // replaceEditMenu
             // 
             this.replaceEditMenu.Name = "replaceEditMenu";
             this.replaceEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.replaceEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.replaceEditMenu.Size = new System.Drawing.Size(224, 26);
             this.replaceEditMenu.Text = "Replace...";
+            this.replaceEditMenu.Click += new System.EventHandler(this.replaceEditMenu_Click);
             // 
             // gotoEditMenu
             // 
             this.gotoEditMenu.Name = "gotoEditMenu";
             this.gotoEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.gotoEditMenu.Size = new System.Drawing.Size(207, 26);
+            this.gotoEditMenu.Size = new System.Drawing.Size(224, 26);
             this.gotoEditMenu.Text = "Go To...";
+            this.gotoEditMenu.Click += new System.EventHandler(this.gotoEditMenu_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(204, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(221, 6);
             // 
             // selectallEditMenu
             // 
@@ -282,6 +293,15 @@
             this.timedateEditMenu.Text = "Time/Date";
             this.timedateEditMenu.Click += new System.EventHandler(this.timedateEditMenu_Click);
             // 
+            // redoEditMenu
+            // 
+            this.redoEditMenu.Enabled = false;
+            this.redoEditMenu.Name = "redoEditMenu";
+            this.redoEditMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoEditMenu.Size = new System.Drawing.Size(224, 26);
+            this.redoEditMenu.Text = "Redo";
+            this.redoEditMenu.Click += new System.EventHandler(this.redoEditMenu_Click);
+            // 
             // formatMenu
             // 
             this.formatMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -293,15 +313,18 @@
             // 
             // wordwrapFormatMenu
             // 
+            this.wordwrapFormatMenu.CheckOnClick = true;
             this.wordwrapFormatMenu.Name = "wordwrapFormatMenu";
-            this.wordwrapFormatMenu.Size = new System.Drawing.Size(168, 26);
+            this.wordwrapFormatMenu.Size = new System.Drawing.Size(224, 26);
             this.wordwrapFormatMenu.Text = "Word Wrap";
+            this.wordwrapFormatMenu.CheckedChanged += new System.EventHandler(this.wordwrapFormatMenu_CheckedChanged);
             // 
             // fontFormatMenu
             // 
             this.fontFormatMenu.Name = "fontFormatMenu";
-            this.fontFormatMenu.Size = new System.Drawing.Size(168, 26);
-            this.fontFormatMenu.Text = "Font...";
+            this.fontFormatMenu.Size = new System.Drawing.Size(224, 26);
+            this.fontFormatMenu.Text = "Font Type";
+            this.fontFormatMenu.Click += new System.EventHandler(this.fontFormatMenu_Click);
             // 
             // viewMenu
             // 
@@ -313,9 +336,11 @@
             // 
             // statusbarViewMenu
             // 
+            this.statusbarViewMenu.CheckOnClick = true;
             this.statusbarViewMenu.Name = "statusbarViewMenu";
-            this.statusbarViewMenu.Size = new System.Drawing.Size(158, 26);
+            this.statusbarViewMenu.Size = new System.Drawing.Size(224, 26);
             this.statusbarViewMenu.Text = "Status Bar";
+            this.statusbarViewMenu.CheckedChanged += new System.EventHandler(this.statusbarViewMenu_CheckedChanged);
             // 
             // viewhelpHelpMenu
             // 
@@ -329,40 +354,64 @@
             // viewHelpToolStripMenuItem
             // 
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewHelpToolStripMenuItem.Text = "View Help";
+            this.viewHelpToolStripMenuItem.Click += new System.EventHandler(this.viewHelpToolStripMenuItem_Click);
             // 
             // aboutnotepadHelpMenu
             // 
             this.aboutnotepadHelpMenu.Name = "aboutnotepadHelpMenu";
-            this.aboutnotepadHelpMenu.Size = new System.Drawing.Size(196, 26);
+            this.aboutnotepadHelpMenu.Size = new System.Drawing.Size(224, 26);
             this.aboutnotepadHelpMenu.Text = "About Notepad";
+            this.aboutnotepadHelpMenu.Click += new System.EventHandler(this.aboutnotepadHelpMenu_Click);
             // 
             // txtArea
             // 
             this.txtArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtArea.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArea.Location = new System.Drawing.Point(0, 30);
+            this.txtArea.Location = new System.Drawing.Point(0, 28);
             this.txtArea.Margin = new System.Windows.Forms.Padding(4);
             this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(873, 412);
+            this.txtArea.Size = new System.Drawing.Size(873, 414);
             this.txtArea.TabIndex = 1;
             this.txtArea.Text = "";
+            this.txtArea.SelectionChanged += new System.EventHandler(this.txtArea_SelectionChanged);
             this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
+            // 
+            // statusContent
+            // 
+            this.statusContent.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusContent.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.status});
+            this.statusContent.Location = new System.Drawing.Point(0, 416);
+            this.statusContent.Name = "statusContent";
+            this.statusContent.Size = new System.Drawing.Size(873, 26);
+            this.statusContent.TabIndex = 2;
+            this.statusContent.Text = "statusContent";
+            // 
+            // status
+            // 
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(77, 20);
+            this.status.Text = "Ln 1, Col 1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 442);
+            this.Controls.Add(this.statusContent);
             this.Controls.Add(this.txtArea);
             this.Controls.Add(this.menubar);
             this.MainMenuStrip = this.menubar;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "NoteNest";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menubar.ResumeLayout(false);
             this.menubar.PerformLayout();
+            this.statusContent.ResumeLayout(false);
+            this.statusContent.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +454,8 @@
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutnotepadHelpMenu;
         private System.Windows.Forms.RichTextBox txtArea;
+        private System.Windows.Forms.ToolStripMenuItem redoEditMenu;
+        private System.Windows.Forms.StatusStrip statusContent;
+        private System.Windows.Forms.ToolStripStatusLabel status;
     }
 }
