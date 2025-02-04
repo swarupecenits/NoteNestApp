@@ -35,14 +35,15 @@ namespace Notepad.Forms
             rDown.Checked = true;
         }
 
-       
+
 
         private void DisableButtons()
         {
             if (txtFind.Text.Length == 0)
             {
-                btnFind.Enabled =btnReplace.Enabled=btnReplaceAll.Enabled= false;
-            }else
+                btnFind.Enabled = btnReplace.Enabled = btnReplaceAll.Enabled = false;
+            }
+            else
             {
                 btnFind.Enabled = btnReplace.Enabled = btnReplaceAll.Enabled = true;
             }
@@ -78,7 +79,7 @@ namespace Notepad.Forms
             if (Editor.SelectionLength == 0)
                 btnFind.PerformClick();
             else
-            Editor.SelectedText = txtReplace.Text;  
+                Editor.SelectedText = txtReplace.Text;
         }
 
         private void btnReplaceAll_Click(object sender, EventArgs e)

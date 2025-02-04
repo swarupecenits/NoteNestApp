@@ -330,7 +330,7 @@ namespace Notepad
             if (formReplace == null)
             {
                 formReplace = new FormReplace();
-                formReplace.Editor=txtArea;
+                formReplace.Editor = txtArea;
                 formReplace.editOpertion = editOperation;
             }
             formReplace.Show();
@@ -338,14 +338,14 @@ namespace Notepad
 
         private void fontFormatMenu_Click(object sender, EventArgs e)
         {
-            FontDialog fontDialog =new FontDialog();
+            FontDialog fontDialog = new FontDialog();
             fontDialog.ShowColor = true;
-            fontDialog.Font=txtArea.Font;
-            fontDialog.Color=txtArea.ForeColor;
-            if(fontDialog.ShowDialog() != DialogResult.Cancel)
+            fontDialog.Font = txtArea.Font;
+            fontDialog.Color = txtArea.ForeColor;
+            if (fontDialog.ShowDialog() != DialogResult.Cancel)
             {
                 txtArea.Font = fontDialog.Font;
-                txtArea.ForeColor=fontDialog.Color;
+                txtArea.ForeColor = fontDialog.Color;
             }
         }
 

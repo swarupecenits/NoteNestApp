@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NotepadCore.Functionality
 {
@@ -11,30 +8,32 @@ namespace NotepadCore.Functionality
         private Stack<string> UndoStack;
         private Stack<string> RedoStack;
 
-        public UndoRedoClass() { 
+        public UndoRedoClass()
+        {
             UndoStack = new Stack<string>();
             RedoStack = new Stack<string>();
         }
-                                               
+
         public void Clear()
         {
             UndoStack.Clear();
             RedoStack.Clear();
         }
 
-        public void AddItem(string item) { 
+        public void AddItem(string item)
+        {
             UndoStack.Push(item);
         }
 
         public string Undo()
         {
             if (UndoStack.Count <= 1)
-                return UndoStack.Peek(); 
+                return UndoStack.Peek();
 
             string item = UndoStack.Pop();
             RedoStack.Push(item);
 
-            return UndoStack.Peek(); 
+            return UndoStack.Peek();
         }
 
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace NotepadCore
 {
@@ -61,10 +56,12 @@ namespace NotepadCore
         public void SaveFile(string fileLocation, string[] lines)
         {
             this.fileLocation = fileLocation;
-            Stream stream =File.Open(FileLocation, FileMode.OpenOrCreate, FileAccess.Write);
+            Stream stream = File.Open(FileLocation, FileMode.OpenOrCreate, FileAccess.Write);
 
-            using (StreamWriter streamwriter = new StreamWriter(stream)) {
-                foreach (string line in lines) { 
+            using (StreamWriter streamwriter = new StreamWriter(stream))
+            {
+                foreach (string line in lines)
+                {
                     streamwriter.WriteLine(line);
                 }
             }
@@ -92,6 +89,6 @@ namespace NotepadCore
             this.Filename = filename;
             this.IsFileSaved = true;
         }
-        
+
     }
 }
